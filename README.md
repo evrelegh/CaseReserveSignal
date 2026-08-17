@@ -140,25 +140,13 @@ The main extension is deliberately left unfitted here:
 
 ## Repository
 
-  ----------------------------------------------------------------------------------------------------
-  File                                                             Contents
-  ---------------------------------------------------------------- -----------------------------------
-  `reserving_triangles_v2.8.0_incremental_ocl_information.ipynb`   Full computational notebook and
-                                                                   diagnostics
-
-  `synthetic_transactions.csv`                                     SynthETIC claim-payment transaction
-                                                                   history
-
-  `synthetic_incurred.csv`                                         SPLICE incurred / case-estimate
-                                                                   history for the same synthetic
-                                                                   portfolio
-
-  `technical_note.pdf`                                             Technical note: motivation,
-                                                                   methods, results, glossary and
-                                                                   references
-
-  `Images/case_reserve_signal.png`                                 Repository overview figure
-  ----------------------------------------------------------------------------------------------------
+| File | Contents |
+|---|---|
+| `reserving_triangles_v2.8.0_incremental_ocl_information.ipynb` | Full computational notebook and diagnostics |
+| `synthetic_transactions.csv` | SynthETIC claim-payment transaction history |
+| `synthetic_incurred.csv` | SPLICE incurred / case-estimate history for the same synthetic portfolio |
+| `technical_note.pdf` | Technical note: motivation, methods, results, glossary and references |
+| `Images/case_reserve_signal.png` | Repository overview figure |
 
 ## Reproducing the technical note
 
