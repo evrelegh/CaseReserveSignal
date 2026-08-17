@@ -60,7 +60,7 @@ log conditional mean does **not** generally recover the arithmetic
 conditional mean required for a best-estimate reserve:
 
 $$
-E[Y \mid X] \neq \exp\!\left(E[\log Y \mid X]\right)
+E[Y \mid X] \neq \exp\left(E[\log Y \mid X]\right)
 $$
 
 because the exponential function is convex. The notebook therefore
