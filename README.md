@@ -136,8 +136,14 @@ The main extension is deliberately left unfitted here:
   ----------------------------------------------------------------------------------------------------
   File                                                             Contents
   ---------------------------------------------------------------- -----------------------------------
-  `reserving_triangles_v2.8.0.ipynb`   Full computational notebook and
+  `reserving_triangles_v2.8.0_incremental_ocl_information.ipynb`   Full computational notebook and
                                                                    diagnostics
+
+  `synthetic_transactions.csv`                                     SynthETIC claim-payment transaction
+                                                                   history
+
+  `synthetic_incurred.csv`                                         SPLICE incurred / case-estimate
+                                                                   history for the same portfolio
 
   `technical_note.pdf`                                             Technical note: motivation,
                                                                    methods, results, glossary and
@@ -146,6 +152,70 @@ The main extension is deliberately left unfitted here:
   `Images/case_reserve_signal.png`                                 Repository overview figure
   ----------------------------------------------------------------------------------------------------
 
+## Reproducing the technical note
+
+The repository includes the two external synthetic input files required
+by the claim-level experiment:
+
+-   `synthetic_transactions.csv` --- claim-payment transactions
+    generated with **SynthETIC 1.1.1**.
+-   `synthetic_incurred.csv` --- incurred and case-estimate histories
+    generated with **SPLICE**.
+
+Keep both CSV files in the **repository root, beside the notebook**.
+This is the layout expected by the supplied code, so a clone of the
+repository should not require path changes.
+
+The earlier macro-reserving examples also use the `raa` and `clrd`
+teaching datasets. These are loaded directly from the Python
+`chainladder` package and are therefore not redistributed as separate
+files.
+
+### Run switchboard
+
+Near the beginning of the notebook is a **run switchboard**. The
+notebook deliberately retains several experimental and unsuccessful
+model branches as part of the research trail; the switches allow those
+branches to remain documented without forcing every expensive experiment
+to execute on each run.
+
+To reproduce the final case-reserving study and the results discussed in
+`technical_note.pdf`, verify that these switches are enabled:
+
+``` python
+RUN_CASE_ESTIMATE_STUDY = True
+RUN_CASE_ROLLING = True
+RUN_CASE_DIAGNOSTICS = True
+RUN_OCL_RECALIBRATION = True
+RUN_OCL_SMEARING = True
+RUN_COMMON_WINDOW_HORSERACE = True
+RUN_YEAR10_DIAGNOSTIC = True
+RUN_LOG_RESIDUAL_DIAGNOSTIC = True
+RUN_INCREMENTAL_OCL_INFO = True
+```
+
+The deliberately unsuccessful or computationally expensive research
+branches may remain disabled:
+
+``` python
+RUN_IPCW = False
+RUN_SURVIVAL_RATE = False
+RUN_MEANFIELD_PROCESS = False
+RUN_STOCHASTIC_PROCESS = False
+```
+
+Leave the remaining core switches at the defaults supplied in the
+notebook. **Do not retune the modelling parameters to reproduce the
+published result:** the notebook itself is the frozen specification of
+the experiment.
+
+After checking the switchboard, use **Restart Kernel and Run All**.
+
+The headline horse race is evaluated on the common pseudo-valuation
+window **years 7--10**. Hidden future payments are used only as
+simulator ground truth for evaluation; they are not available to the
+fitted reserving models.
+
 ## Stack
 
 Python · NumPy · pandas · SciPy · scikit-learn · matplotlib ·
@@ -153,11 +223,12 @@ chainladder
 
 ## Data
 
-The experiment uses **synthetic claims data**: transaction histories
-generated with SynthETIC and incurred/case-estimate histories from
-SPLICE. The repository should document the exact local inputs required
-by the notebook; synthetic source data need not be redistributed if
-licensing or file-size considerations make that undesirable.
+The experiment uses a single controlled synthetic claims portfolio.
+`synthetic_transactions.csv` contains the payment history generated with
+SynthETIC; `synthetic_incurred.csv` contains the corresponding SPLICE
+incurred and case-estimate history. The two files are included in the
+repository so that the notebook can be run with the same inputs used for
+the technical note.
 
 ## Status
 
