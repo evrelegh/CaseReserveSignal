@@ -136,7 +136,7 @@ The main extension is deliberately left unfitted here:
   ----------------------------------------------------------------------------------------------------
   File                                                             Contents
   ---------------------------------------------------------------- -----------------------------------
-  `reserving_triangles_v2.8.0_incremental_ocl_information.ipynb`   Full computational notebook and
+  `reserving_triangles_v2.8.0.ipynb`   Full computational notebook and
                                                                    diagnostics
 
   `technical_note.pdf`                                             Technical note: motivation,
