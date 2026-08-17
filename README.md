@@ -77,13 +77,13 @@ coexist with unstable conditional calibration across claim states.
 The common-window horse race uses pseudo-valuations at years **7, 8, 9
 and 10** against hidden simulator truth.
 
-  Method                             Mean relative bias        MAPE
-  -------------------------------- -------------------- -----------
-  Case-aware global smear + IBNR                  −1.2%    **9.4%**
-  Paid Chain Ladder                               +3.6%   **13.2%**
-  Paid-only micro + IBNR                         −18.3%       18.3%
-  Raw OCL + IBNR                                 −36.0%       36.0%
-  Incurred Chain Ladder                          −48.2%       48.2%
+| Method | Mean relative bias | MAPE |
+|---|---:|---:|
+| **Case-aware global smear + IBNR** | −1.2% | **9.4%** |
+| Paid Chain Ladder | +3.6% | 13.2% |
+| Paid-only micro + IBNR | −18.3% | 18.3% |
+| Raw OCL + IBNR | −36.0% | 36.0% |
+| Incurred Chain Ladder | −48.2% | 48.2% |
 
 For the RBNS-based methods, the same causal IBNR estimate is added to
 reach the total-reserve target. The cleanest information comparison
