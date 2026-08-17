@@ -13,10 +13,16 @@ predictive information about future **Reported But Not Settled (RBNS)**
 cost --- and what happens when that information is aggregated, used
 naively, or recalibrated.
 
+**OCL** is the claim handler's current estimate of the amount still to
+be paid on a reported open claim.
+
 The central result is deliberately narrower than "micro beats macro":
 **case estimates contain material incremental information about the
 level of future RBNS beyond the paid-state variables used here, but
 their raw monetary level is badly miscalibrated.**
+
+**[Technical note](technical_note.pdf)** · **[Jupyter
+notebook](reserving_triangles_v2.8.0_incremental_ocl_information.ipynb)**
 
 ## Headline findings
 
@@ -24,10 +30,10 @@ their raw monetary level is badly miscalibrated.**
     future RBNS in aggregate, yet it ranks claims well: Spearman
     correlation with future RBNS is about **0.60**, versus about
     **0.16** for paid-to-date.
--   Naive use of case estimates does not solve reserving. On the common
-    years 7--10 window, **incurred Chain Ladder is the weakest
-    benchmark** in this particular under-reserving regime because it
-    inherits the case-reserving bias.
+-   In this deliberately under-reserved synthetic regime, **incurred
+    Chain Ladder performs worst among the compared methods**,
+    illustrating how an incurred triangle can inherit systematic
+    case-reserving bias.
 -   A case-aware claim-level model with **Duan smearing** achieves
     **9.4% total-reserve MAPE** on the four common pseudo-valuations,
     versus **13.2% for paid Chain Ladder**. This is descriptive evidence
@@ -143,7 +149,8 @@ The main extension is deliberately left unfitted here:
                                                                    history
 
   `synthetic_incurred.csv`                                         SPLICE incurred / case-estimate
-                                                                   history for the same portfolio
+                                                                   history for the same synthetic
+                                                                   portfolio
 
   `technical_note.pdf`                                             Technical note: motivation,
                                                                    methods, results, glossary and
@@ -160,7 +167,8 @@ by the claim-level experiment:
 -   `synthetic_transactions.csv` --- claim-payment transactions
     generated with **SynthETIC 1.1.1**.
 -   `synthetic_incurred.csv` --- incurred and case-estimate histories
-    generated with **SPLICE**.
+    generated with **SPLICE** for the **same claims and synthetic
+    portfolio**.
 
 Keep both CSV files in the **repository root, beside the notebook**.
 This is the layout expected by the supplied code, so a clone of the
@@ -220,6 +228,8 @@ fitted reserving models.
 
 Python · NumPy · pandas · SciPy · scikit-learn · matplotlib ·
 chainladder
+
+The current notebook was developed and run under **Python 3.13**.
 
 ## Data
 
