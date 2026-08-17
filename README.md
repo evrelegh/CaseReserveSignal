@@ -59,7 +59,9 @@ The case-aware model is fitted on a log scale. Exponentiating a fitted
 log conditional mean does **not** generally recover the arithmetic
 conditional mean required for a best-estimate reserve:
 
-`E[Y | X] != exp(E[log Y | X])`
+$$
+E[Y \mid X] \neq \exp\!\left(E[\log Y \mid X]\right)
+$$
 
 because the exponential function is convex. The notebook therefore
 studies **Duan's smearing estimator** as a non-parametric
