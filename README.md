@@ -25,10 +25,7 @@ their raw monetary level is badly miscalibrated.**
 
 ## Headline findings
 
--   At the year-10 valuation, raw OCL is about **40% below** hidden
-    future RBNS in aggregate, yet it ranks claims well: Spearman
-    correlation with future RBNS is about **0.60**, versus about
-    **0.16** for paid-to-date.
+- At the year-10 valuation, raw OCL **understates hidden future RBNS by about 40% in aggregate**, yet it ranks claims well: Spearman correlation with future RBNS is about **0.60**, versus about **0.16** for paid-to-date.
 -   In this deliberately under-reserved synthetic regime, **incurred
     Chain Ladder performs worst among the compared methods**,
     illustrating how an incurred triangle can inherit systematic
