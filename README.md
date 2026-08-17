@@ -21,8 +21,7 @@ The central result is deliberately narrower than "micro beats macro":
 level of future RBNS beyond the paid-state variables used here, but
 their raw monetary level is badly miscalibrated.**
 
-**[Technical note](technical_note.pdf)** · **[Jupyter
-notebook](reserving_triangles_v2.8.0_incremental_ocl_information.ipynb)**
+**[Technical note](technical_note.pdf)** 
 
 ## Headline findings
 
